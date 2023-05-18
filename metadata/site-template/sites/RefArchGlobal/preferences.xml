@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences xmlns="http://www.demandware.com/xml/impex/preferences/2007-03-31">
+    <custom-preferences>
+        <all-instances/>
+        <development>
+            <preference preference-id="gr4vyEmbedScriptURL">https://cdn.partners.gr4vy.app/embed.latest.js</preference>
+            <preference preference-id="gr4vyBordersWidths">{"container": "thin", "input": "thin"}</preference>
+            <preference preference-id="gr4vyColors">{"text": "#0f0f0f",
+"primary": "#0f0f0f",
+"containerBorder":"#a31f1f"}</preference>
+            <preference preference-id="gr4vyDisplay">all</preference>
+            <preference preference-id="gr4vyEnvironment">sandbox</preference>
+            <preference preference-id="gr4vyFocusRing">{"focusRing": "0 0 0 2px #7F3D3D, 0 0 0 4px #7F3D3D"}</preference>
+            <preference preference-id="gr4vyFonts">{"body": "google:Shantell Sans, Tahoma, Arial"}</preference>
+            <preference preference-id="gr4vyId">partners</preference>
+            <preference preference-id="gr4vyIntent">true</preference>
+            <preference preference-id="gr4vyRadii">{"container": "subtle","input": "subtle"}</preference>
+            <preference preference-id="gr4vyStore">true</preference>
+            <preference preference-id="isGr4vyEnabled">true</preference>
+            <preference preference-id="gr4vyMetadata">{
+"connector": "stripe"
+}</preference>
+            <preference preference-id="gr4vyRequireSecurityCode">false</preference>
+        </development>
+        <staging/>
+        <production/>
+    </custom-preferences>
+</preferences>
+

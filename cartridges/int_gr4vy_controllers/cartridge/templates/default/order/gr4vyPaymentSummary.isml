@@ -1,0 +1,9 @@
+<div class="gr4vy-payment-info">
+    <div class="method-name">
+        <isprint value="${paymentInstr.custom.gr4vyPaymentMethod}" />
+    </div>
+    <div class="payment-amount">
+        <span class="label">${Resource.msg('global.amount','locale',null)}:</span>
+		<span class="value"><isprint value="${paymentInstr.paymentTransaction.amount}"/></span>
+    </div>
+</div>

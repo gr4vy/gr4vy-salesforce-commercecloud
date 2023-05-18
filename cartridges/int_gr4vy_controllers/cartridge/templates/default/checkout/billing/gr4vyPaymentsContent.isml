@@ -1,0 +1,33 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<iscomment> <input type="hidden" class="form-control"
+        name="${pdict.forms.billingForm.paymentMethod.htmlName}"
+        value="${paymentOption.ID}" /> </iscomment>
+
+<input type="hidden" class="place-order" data-action="${URLUtils.https('COPlaceOrder-Start')}">
+<div class="gr4vy-container"></div>
+
+<div id="gr4vy-data" 
+        data-handle-redirect="${URLUtils.url('Gr4vy-HandleGr4vyRedirect')}"
+        data-metadata="${pdict.gr4vyMetadata ? JSON.stringify(pdict.gr4vyMetadata) : ''}"
+        data-paymentsource="${pdict.gr4vyPaymentSource}"
+        data-display="${pdict.gr4vyDisplay}" 
+        data-store="${pdict.gr4vyStore}" 
+        data-intent="${pdict.gr4vyIntent}" 
+        data-statementdescriptor="${pdict.gr4vyStatementDescriptor ? JSON.stringify(pdict.gr4vyStatementDescriptor) : ''}" 
+        data-gr4vyid="${pdict.gr4vyId}" 
+        data-environment="${pdict.gr4vyEnvironment}" 
+        data-requiresecuritycode="${pdict.gr4vyRequireSecurityCode}" 
+        data-token="${pdict.gr4vyClientEmbedToken}" 
+        data-amount="${pdict.gr4vyTotalGrossPrice}" 
+        data-currency="${pdict.gr4vyCurrencyCode}" 
+        data-country="${pdict.gr4vyCountryCode}" 
+        data-locale="${pdict.gr4vyLocale}" 
+        data-buyerid="${pdict.gr4vyBuyerId}" 
+        data-cartitems="${(pdict.gr4vyCartItems && pdict.gr4vyCartItems.key) ? JSON.stringify(pdict.gr4vyCartItems.key) : ''}" 
+        data-gr4vy-fonts="${(pdict.gr4vyStylingObject && pdict.gr4vyStylingObject.stylingGr4vyFonts) ? JSON.stringify(pdict.gr4vyStylingObject.stylingGr4vyFonts) : ''}"
+        data-gr4vy-colors="${(pdict.gr4vyStylingObject && pdict.gr4vyStylingObject.stylingGr4vyColors) ? JSON.stringify(pdict.gr4vyStylingObject.stylingGr4vyColors) : ''}"
+        data-gr4vy-border-widths="${(pdict.gr4vyStylingObject && pdict.gr4vyStylingObject.stylingGr4vyBorderWidths) ? JSON.stringify(pdict.gr4vyStylingObject.stylingGr4vyBorderWidths) : ''}"
+        data-gr4vy-radii="${(pdict.gr4vyStylingObject && pdict.gr4vyStylingObject.stylingGr4vyRadii) ? JSON.stringify(pdict.gr4vyStylingObject.stylingGr4vyRadii) : ''}"
+        data-gr4vy-focus-ring="${(pdict.gr4vyStylingObject && pdict.gr4vyStylingObject.stylingGr4vyFocusRing) ? JSON.stringify(pdict.gr4vyStylingObject.stylingGr4vyFocusRing) : ''}"
+/>

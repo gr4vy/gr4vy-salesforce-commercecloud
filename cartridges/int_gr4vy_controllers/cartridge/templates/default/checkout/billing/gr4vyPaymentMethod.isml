@@ -1,0 +1,30 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<iscomment> TEMPLATENAME: paymentmethods.isml </iscomment>
+<isinclude template="util/modules"/>
+
+<div class="error-form hide"></div>
+<isscript>
+    var Constants = require('*/cartridge/scripts/util/gr4vyConstants');
+    var gr4vyPreferences = require('*/cartridge/scripts/util/gr4vyPreferences');
+    var selectedPaymentID = Constants.GR4VY_ID;
+</isscript>
+
+<fieldset>
+
+    <legend>
+        ${Resource.msg('billing.paymentheader','checkout',null)}
+        <div class="dialog-required"> <span class="required-indicator">&#8226; <em>${Resource.msg('global.requiredfield','locale',null)}</em></span></div>
+    </legend>
+
+    <input id="is-${radioID}" type="radio" class="input-radio" name="${pdict.CurrentForms.billing.paymentMethods.selectedPaymentMethodID.htmlName}" value="${Constants.GR4VY_ID}" checked="checked" style="display:none;"/> 
+
+    <isif condition="${!empty(pdict.MissingPaymentProcessor)}">
+        <div class="billing-error">${Resource.msg('billing.missingprocessorerror','checkout',null)}</div>
+    </isif>
+
+    <div class="payment-method payment-method-expanded gr4vy-payment-method" data-method=${Constants.GR4VY_ID}>
+        <isinclude template="checkout/billing/gr4vyPaymentsContent"/>
+    </div>
+</fieldset>
+
+<script src="${gr4vyPreferences.getGr4vyEmbedScriptURL()}" type="text/javascript"></script>

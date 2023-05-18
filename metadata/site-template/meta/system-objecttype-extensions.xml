@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+<type-extension type-id="SitePreferences">
+    <custom-attribute-definitions>
+            <attribute-definition attribute-id="isGr4vyEnabled">
+                <display-name xml:lang="x-default">Enable Gr4vy</display-name>
+                <description xml:lang="x-default">Preference to check whether the gr4vy payment option is enabled or not.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                 <default-value>true</default-value>
+            </attribute-definition>
+           <attribute-definition attribute-id="gr4vyEmbedScriptURL">
+                <display-name xml:lang="x-default">Gr4vy Embed Script URL</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyPrivateKey">
+                <display-name xml:lang="x-default">Gr4vy Private Key</display-name>
+                <description xml:lang="x-default">Private key within PEM file provided by Gr4vy. Omit the Begin and End statements while copying the value from the PEM file. Should be compatible with SHA512withRSA algorithm. Please check with Gr4vy in case of any concerns</description>
+                <type>password</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyPEMThumbprint">
+                <display-name xml:lang="x-default">Gr4vy PEM file thumbprint</display-name>
+                <description xml:lang="x-default">This can be found in Gr4vy dashboard</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyDisplay">
+                <display-name xml:lang="x-default">Filter for the payment methods displayed</display-name>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">all</display>
+                        <value>all</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">addOnly</display>
+                        <value>addOnly</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">storedOnly</display>
+                        <value>storedOnly</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">supportsTokenization</display>
+                        <value>supportsTokenization</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyEnvironment">
+                <display-name xml:lang="x-default">Gr4vy environment mode</display-name>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">sandbox</display>
+                        <value>sandbox</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">production</display>
+                        <value>production</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyId">
+                <display-name xml:lang="x-default">Gravy ID</display-name>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyIntent">
+                <display-name xml:lang="x-default">Manual Capture Enabled</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyMetadata">
+                <display-name xml:lang="x-default">Gr4vy metadata</display-name>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyPaymentSource">
+                <display-name xml:lang="x-default">Capture first transaction</display-name>
+                <description xml:lang="x-default">Use Embed to capture the first transaction for a subscription or an installment</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">installment</display>
+                        <value>installment</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">moto</display>
+                        <value>moto</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">recurring</display>
+                        <value>recurring</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyStatementDescriptor">
+                <display-name xml:lang="x-default">statement information</display-name>
+                <description xml:lang="x-default">An optional object with information about the purchase to construct the statement information the buyer will see in their bank statement</description>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyStore">
+                <display-name xml:lang="x-default">Store Payment Methods</display-name>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">ask</display>
+                        <value>ask</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">true</display>
+                        <value>true</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">false</display>
+                        <value>false</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyRequireSecurityCode">
+                <display-name xml:lang="x-default">Require Security Code</display-name>
+                <description xml:lang="x-default">An optional boolean which forces security code to be prompted for stored card payments.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyFonts">
+                <display-name xml:lang="x-default">Gr4vy Fonts</display-name>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyColors">
+                <display-name xml:lang="x-default">Gr4vy Colors</display-name>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyBordersWidths">
+                <display-name xml:lang="x-default">Gr4vy Borders Widths</display-name>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyRadii">
+                <display-name xml:lang="x-default">Gr4vy Radii</display-name>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyFocusRing">
+                <display-name xml:lang="x-default">Gr4vy Focus Ring</display-name>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+    </custom-attribute-definitions>
+    <group-definitions>
+            <attribute-group group-id="Gr4vy">
+                <display-name xml:lang="x-default">Gr4vy</display-name>
+                <attribute attribute-id="isGr4vyEnabled"/>
+                <attribute attribute-id="gr4vyMetadata"/>
+                <attribute attribute-id="gr4vyPaymentSource"/>
+                <attribute attribute-id="gr4vyDisplay"/>
+                <attribute attribute-id="gr4vyStore"/>
+                <attribute attribute-id="gr4vyIntent"/>
+                <attribute attribute-id="gr4vyStatementDescriptor"/>
+                <attribute attribute-id="gr4vyId"/>
+                <attribute attribute-id="gr4vyEnvironment"/>
+                <attribute attribute-id="gr4vyRequireSecurityCode"/>
+                <attribute attribute-id="gr4vyEmbedScriptURL"/>
+                <attribute attribute-id="gr4vyPrivateKey"/>
+                <attribute attribute-id="gr4vyPEMThumbprint"/>
+            </attribute-group>
+            <attribute-group group-id="Gr4vyTheme">
+                <display-name xml:lang="x-default">Gr4vyTheme</display-name>
+                <attribute attribute-id="gr4vyFonts"/>
+                <attribute attribute-id="gr4vyColors"/>
+                <attribute attribute-id="gr4vyBordersWidths"/>
+                <attribute attribute-id="gr4vyRadii"/>
+                <attribute attribute-id="gr4vyFocusRing"/>
+            </attribute-group>
+    </group-definitions>
+</type-extension>
+<type-extension type-id="Basket">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="gr4vyBuyerId">
+                <display-name xml:lang="x-default">Gr4vy Buyer ID</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyTotalGrossPrice">
+                <display-name xml:lang="x-default">Total Gross Price in Gr4vy token</display-name>
+                <description xml:lang="x-default">Last Total Gross Price calculated and stored in Gr4vy token. Used to cancel multi-tab cart/checkout issues.</description>
+                <type>int</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Gr4vy">
+                <display-name xml:lang="x-default">Gr4vy</display-name>
+                <description xml:lang="x-default">Attributes for Gr4vy</description>
+                <attribute attribute-id="gr4vyBuyerId"/>
+            </attribute-group>
+        </group-definitions>
+</type-extension>
+    <type-extension type-id="Order">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="gr4vyBuyerId">
+                <display-name xml:lang="x-default">Gr4vy Buyer ID</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyPaymentServiceName">
+                <display-name xml:lang="x-default">Gr4vy Payment Service Name</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyPaymentTransactionId">
+                <display-name xml:lang="x-default">Gr4vy Payment Transaction Id</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyTransactionAmount">
+                <display-name xml:lang="x-default">Gr4vy Transaction Amount</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyTransactionDetails">
+                <display-name xml:lang="x-default">Gr4vy Transaction Details</display-name>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyTransactionStatus">
+                <display-name xml:lang="x-default">Gr4vy Transaction Status</display-name>
+                <type>set-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Gr4vy">
+                <display-name xml:lang="x-default">Gr4vy</display-name>
+                <description xml:lang="x-default">Attributes for Gr4vy</description>
+                <attribute attribute-id="gr4vyBuyerId"/>
+                <attribute attribute-id="gr4vyPaymentTransactionId"/>
+                <attribute attribute-id="gr4vyPaymentServiceName"/>
+                <attribute attribute-id="gr4vyTransactionAmount"/>
+                <attribute attribute-id="gr4vyTransactionDetails"/>
+                <attribute attribute-id="gr4vyTransactionStatus"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+    <type-extension type-id="Profile">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="gr4vyBuyerId">
+                <display-name xml:lang="x-default">Gr4vy Buyer ID</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Gr4vy">
+                <display-name xml:lang="x-default">Gr4vy</display-name>
+                <description xml:lang="x-default">Attributes for Gr4vy</description>
+                <attribute attribute-id="gr4vyBuyerId"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+<type-extension type-id="OrderPaymentInstrument">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="gr4vyPaymentMethod">
+                <display-name xml:lang="x-default">Gr4vy Payment Method</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="gr4vyPaymentMethodScheme">
+                <display-name xml:lang="x-default">Gr4vy Payment Method Scheme</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+</type-extension>
+</metadata>

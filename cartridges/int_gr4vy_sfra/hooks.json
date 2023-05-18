@@ -1,0 +1,12 @@
+{
+    "hooks": [
+        {
+            "name": "app.payment.processor.gr4vy",
+            "script": "./cartridge/scripts/hooks/payment/processor/gr4vy"
+        },
+        {
+            "name": "app.payment.form.processor.gr4vy",
+            "script": "./cartridge/scripts/hooks/payment/processor/gr4vy_form_processor"
+        }
+    ]
+}

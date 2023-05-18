@@ -1,0 +1,12 @@
+<div class="payment-details">
+    <isloop items="${pdict.order.billing.payment.selectedPaymentInstruments}" var="payment">
+        <isif condition="${payment.paymentMethod === 'CREDIT_CARD'}">
+            <isinclude template="checkout/billing/paymentOptions/creditCardSummary" />
+        </isif>
+        <!-- Gr4vy - Start load content for Gr4vy -->
+        <isif condition="${payment.paymentMethod === 'Gr4vy'}">
+            <isinclude template="checkout/billing/paymentOptions/gr4vyPaymentSummary" />
+        </isif>
+        <!-- Gr4vy - End load content for Gr4vy -->
+    </isloop>
+</div>

@@ -1,0 +1,10 @@
+<li class="nav-item gr4vy-payment-item" data-method-id="Gr4vy">
+    <a class="nav-link gr4vy-payments-tab active" data-toggle="tab" href="#gr4vy_tab_pane" role="tab">
+        <img class="gr4vy-payments-option"
+                src="${URLUtils.staticURL('/images/gr4vy.svg')}"
+                height="16"
+                alt="Gr4vy"
+                title="Gr4vy"
+        /> 
+    </a>
+</li>

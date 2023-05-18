@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <custom-type type-id="gr4vyNotification">
+        <display-name xml:lang="x-default">Gr4vy Notification</display-name>
+        <description xml:lang="x-default">Custom Object to store gr4vy webhook payload data</description>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <retention-days>3</retention-days>
+        <key-definition attribute-id="gr4vyNotificationId">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="createdAt">
+                <display-name xml:lang="x-default">Created At</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="eventType">
+                <display-name xml:lang="x-default">Event Type</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="refundId">
+                <display-name xml:lang="x-default">Refund Id</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="targetId">
+                <display-name xml:lang="x-default">Target Id</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="targetType">
+                <display-name xml:lang="x-default">Target Type</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="gr4vy">
+                <display-name xml:lang="x-default">Gr4vy</display-name>
+                <attribute attribute-id="gr4vyNotificationId"/>
+                <attribute attribute-id="eventType"/>
+                <attribute attribute-id="createdAt"/>
+                <attribute attribute-id="targetType"/>
+                <attribute attribute-id="targetId"/>
+                <attribute attribute-id="refundId"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+</metadata>

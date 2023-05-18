@@ -1,0 +1,6 @@
+<div class="method-name">
+    <isprint value="${payment.gr4vyPaymentMethod}"/> <br />
+</div>
+<div class="amount">
+    <isprint value="${payment.amountFormatted}"/>
+</div>

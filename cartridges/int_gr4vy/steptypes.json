@@ -1,0 +1,44 @@
+{
+    "step-types": {
+        "script-module-step": [
+            {
+                "@type-id": "custom.ProcessGr4vyNotificationsStepType",
+                "@supports-parallel-execution": "true",
+                "@supports-site-context": "true",
+                "@supports-organization-context": "false",
+                "description": "Process gr4vy notifications.",
+                "module": "int_gr4vy/cartridge/scripts/job/processGr4vyNotification.js",
+                "function": "processNotification",
+                "transactional": "true",
+                "timeout-in-seconds": "5000",
+                "parameters": {
+                    "parameter": [
+                        {
+                            "@name": "delayInMinite",
+                            "@type": "string",
+                            "@required": "false",
+                            "description": "Custom Objects delay for prcessing",
+                            "default-value": "1"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [
+                        {
+                            "@code": "ERROR",
+                            "description": "Used when the step failed with an error."
+                        },
+                        {
+                            "@code": "FINISHED",
+                            "description": "Used when the step finished successfully."
+                        },
+                        {
+                            "@code": "FINISHED_WITH_WARNINGS",
+                            "description": "Used when the step finished with warnings."
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

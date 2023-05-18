@@ -1,0 +1,37 @@
+<isscript>
+    var formatMoney = require('dw/util/StringUtils').formatMoney;
+    var order = pdict.Order;
+    var processor = dw.order.PaymentMgr.getPaymentMethod('Gr4vy').getPaymentProcessor().getID();
+    var paymentInstrument;
+    var paymentInstruments = order.getPaymentInstruments().iterator();
+    if (paymentInstruments.hasNext()) {
+        paymentInstrument = paymentInstruments.next();
+    }
+</isscript>
+
+<div class="gr4vy-transaction-table">
+    <div class="processor-div">
+        <div class="gr4vy-processor">
+            ${order.custom.gr4vyPaymentServiceName} ${Resource.msg('paymentInstrument.via', 'gr4vyPaymentInstrument', null)} ${paymentInstrument.paymentMethod}
+        </div>
+        <div class="gr4vy-processor">
+            ${Resource.msg('gr4vy.transaction', 'gr4vyPaymentInstrument', null)} ${order.custom.gr4vyPaymentTransactionId}
+        </div>
+        <div class="gr4vy-processor">
+            ${Resource.msg('gr4vy.amount', 'gr4vyPaymentInstrument', null)}
+            ${formatMoney(paymentInstrument.paymentTransaction.amount)}
+        </div>
+    </div>
+    <br>
+    <isif condition="${paymentInstrument.custom.gr4vyPaymentMethod != null}">
+        <div class="gr4vy-info">
+            ${Resource.msg('paymentInstrument.custom.gr4vyPaymentMethod', 'gr4vyPaymentInstrument', null)}&nbsp;${paymentInstrument.custom.gr4vyPaymentMethod}
+        </div>
+    </isif>
+    <isif condition="${paymentInstrument.custom.gr4vyPaymentMethodScheme != null}">
+        <div class="gr4vy-info">
+            ${Resource.msg('paymentInstrument.custom.gr4vyPaymentMethodScheme', 'gr4vyPaymentInstrument', null)}&nbsp;${paymentInstrument.custom.gr4vyPaymentMethodScheme}
+        </div>
+    </isif>
+</div>
+<script src="${URLUtils.staticURL('/js/paymentInstrumentGr4vy.js')}"></script>

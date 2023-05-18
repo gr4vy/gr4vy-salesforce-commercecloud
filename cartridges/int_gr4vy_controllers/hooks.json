@@ -1,0 +1,8 @@
+{
+    "hooks": [
+        {
+            "name": "app.payment.processor.GR4VY",
+            "script": "./cartridge/scripts/hooks/payment/processor/gr4vy"
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+  "name": "int_gr4vy_sfra",
+  "version": "23.1.0",
+  "description": "Gr4vy",
+  "main": "index.js",
+  "scripts": {
+    "lint": "sgmf-scripts --lint js && sgmf-scripts --lint css",
+    "upload": "sgmf-scripts --upload -- ",
+    "uploadCartridge": "sgmf-scripts --uploadCartridge bm_gr4vy && sgmf-scripts --uploadCartridge int_gr4vy && sgmf-scripts --uploadCartridge int_gr4vy_sfra && sgmf-scripts --uploadCartridge int_gr4vy_controllers && sgmf-scripts --uploadCartridge app_gr4vy_core && sgmf-scripts --uploadCartridge app_gr4vy_controllers",
+    "compile:js": "sgmf-scripts --compile js",
+    "compile:scss": "sgmf-scripts --compile css",
+    "test": "sgmf-scripts --test test/unit/**/*.js",
+    "test:integration": "sgmf-scripts --integration 'test/integration/**/*.js'"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "css-loader": "^1.0.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^5.0.3",
+    "eslint-plugin-import": "^1.16.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^10.0.0",
+    "postcss-loader": "^3.0.0",
+    "proxyquire": "1.7.4",
+    "sass-loader": "^7.3.1",
+    "sgmf-scripts": "^2.4.2",
+    "sinon": "^1.17.7",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-scss": "^2.5.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 10"
+  ],
+  "packageName": "int_gr4vy_sfra",
+  "paths": {
+    "base": "../storefront-reference-architecture/cartridges/app_storefront_base/"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+}
