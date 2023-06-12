@@ -166,13 +166,8 @@ function initializeGr4vyPayment() {
                         orderID: orderID
                     },
                     success: function (data) {
-                        if(data.error){
-                            if (data.cartError) {
-                                $('.error-form').show();
-                                $('.error-form').text(data.errorMessage);
-                            } else {
-                                window.location.href = data.redirectUrl;
-                            }
+                        if(data.error && data.redirectUrl) {
+                            window.location.href = data.redirectUrl;
                         }
                     }
                 });
